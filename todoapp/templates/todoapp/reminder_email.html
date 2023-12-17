@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task Reminder</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: #ffffff;
+        }
+
+        p {
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        strong {
+            color: #3498db;
+        }
+
+        footer {
+            margin-top: 20px;
+            color: #777777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h2>Task Reminder</h2>
+        </header>
+        <main>
+            <p>Dear {{ username|capfirst }}</p>
+            <p>This is a reminder for the upcoming task :</p>
+            <table>
+                <tr>
+                    <th>Task</th>
+                    <td>{{ task.name|capfirst }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ task.description|capfirst }}</td>
+                </tr>
+                <tr>
+                    <th>Deadline</th>
+                    <td>{{ task.deadline}}</td>
+                </tr>
+            </table>
+            <p>Best regards,<br>TodoApp Team</p>
+        </main>
+        <footer>
+            <p>&copy; 2023 TodoApp. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
