@@ -85,9 +85,9 @@ DATABASES = {
             'OPTIONS': {
                 'init_command': "SET default_storage_engine=INNODB",
             },
-            'NAME': 'tododb', # name of the database
-            'USER': 'root',# MySQL server username
-            'PASSWORD': '', # password for the database
+            'NAME': 'database name', # name of the database
+            'USER': 'your username',# MySQL server username
+            'PASSWORD': 'your password', # password for the database
             'HOST': 'localhost',
             'PORT': '3306',
         }
