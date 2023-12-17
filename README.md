@@ -26,7 +26,7 @@ Follow these steps to get the project up and running on your local machine.
 2. Navigate to the root directory of your Django project using the terminal or command prompt.
 
     ```bash
-    cd /path/to/your/project
+    cd /djangoassignment
     ```
 
 3. Activate the virtual environment:
@@ -39,22 +39,49 @@ Follow these steps to get the project up and running on your local machine.
     ```bash
     pip install -r requirements.txt
     ```
+5. **Database Configuration:**
 
-5. Apply migrations:
+   Open the `settings.py` file in your Django project and update the `DATABASES` setting with your MySQL database credentials.
+
+   ```python
+   DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.mysql',
+           'OPTIONS': {
+               'init_command': "SET default_storage_engine=INNODB",
+           },
+           'NAME': 'database name',     # Replace with your database name
+           'USER': 'your username',     # Replace with your MySQL server username
+           'PASSWORD': 'your password', # Replace with your database password
+           'HOST': 'localhost',
+           'PORT': '3306',
+       }
+   }
+6. **Create a account in MailTrap:**
+
+   Create a account in MailTrap using url : https://mailtrap.io/ and selct Django from the dropdown list then you will get a code and paste it in settings.py file
+example :
+
+   ```python
+   EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+   EMAIL_HOST = 'sandbox.smtp.mailtrap.io'  # Update with your SMTP server
+   EMAIL_PORT = '2525'  # Update with your SMTP port
+   EMAIL_USE_TLS = True  # Use TLS/SSL if required
+   EMAIL_HOST_USER = '806261e8b5f45d' # Update with your email
+   EMAIL_HOST_PASSWORD = 'ae48ea3023dd7d'  # Update with your email password
+   EMAIL_TIMEOUT = 30  # Increase the timeout value (in seconds)
+
+7. Apply migrations:
 
     ```bash
     python manage.py migrate
     ```
 
-6. Run the server:
+8. Run the server:
 
     ```bash
     python manage.py runserver
     ```
-
-## Email Configuration
-
-We used Mailtrap Email Delivery Platform to send email to Test. All settings related to Mailtrap are mentioned in the `settings.py` file. Create an account with Mailtrap, select Django in the dropdown, and apply these settings in `settings.py`.
 
 ## Table of Contents
 
